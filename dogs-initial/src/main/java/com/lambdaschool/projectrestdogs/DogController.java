@@ -13,8 +13,8 @@ import java.util.ArrayList;
 @RequestMapping("/dogs")
 public class DogController
 {
-    // localhost:8080/dogs/dogs
-    @GetMapping(value = "/dogs")
+    // localhost:8080/dogs/alldogs
+    @GetMapping(value = "/alldogs")
     public ResponseEntity<?> getAllDogs()
     {
         return new ResponseEntity<>(ProjectrestdogsApplication.ourDogList.dogList, HttpStatus.OK);
