@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class ProjectrestdogsApplication
 {
 
-    static DogList ourDogList;
+    public static DogList ourDogList;
     public static void main(String[] args)
     {
         ourDogList = new DogList();

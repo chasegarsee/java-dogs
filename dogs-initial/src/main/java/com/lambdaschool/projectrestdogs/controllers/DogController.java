@@ -1,5 +1,7 @@
-package com.lambdaschool.projectrestdogs;
+package com.lambdaschool.projectrestdogs.controllers;
 
+import com.lambdaschool.projectrestdogs.ProjectrestdogsApplication;
+import com.lambdaschool.projectrestdogs.models.Dog;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
