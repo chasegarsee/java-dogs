@@ -18,13 +18,13 @@ public class Dog
         this.apartmentSuitable = apartmentSuitable;
     }
 
-//    public Dog(Dog toClone)
-//    {
-//        this.id = toClone.getId();
-//        this.breed = toClone.getBreed();
-//        this.weight = toClone.weight;
-//        this.apartmentSuitable = toClone.isApartmentSuitable();
-//    }
+    public Dog(Dog toClone)
+    {
+        this.id = toClone.getId();
+        this.breed = toClone.getBreed();
+        this.weight = toClone.weight;
+        this.apartmentSuitable = toClone.isApartmentSuitable();
+    }
 
     public long getId()
     {
@@ -59,11 +59,5 @@ public class Dog
     public void setApartmentSuitable(boolean apartmentSuitable)
     {
         this.apartmentSuitable = apartmentSuitable;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "Dog{" + "id=" + id + ", breed='" + breed + '\'' + ", weight=" + weight + ", apartmentSuitable=" + apartmentSuitable + '}';
     }
 }

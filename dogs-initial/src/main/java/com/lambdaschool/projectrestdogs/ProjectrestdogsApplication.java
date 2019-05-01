@@ -17,7 +17,7 @@ public class ProjectrestdogsApplication
         ourDogList = new DogList();
         ApplicationContext ctx = SpringApplication.run(ProjectrestdogsApplication.class, args);
 
-        DispatcherServlet dispatcherServlet = (DispatcherServlet)ctx.getBean("dispatcherServlet");
+        DispatcherServlet dispatcherServlet = (DispatcherServlet) ctx.getBean("dispatcherServlet");
         dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
     }
 
