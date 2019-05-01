@@ -33,7 +33,7 @@ public class DogController
     public ResponseEntity<?> getAllDogs()
     {
         logger.info("/All Dogs Accessed");
-        msgSender.sendMessage("MESSAGE SERVICE MU FUKEN WORKING");
+        msgSender.sendMessage("!!ACCESSED ALL DOGS, DOG!!");
         return new ResponseEntity<>(ProjectrestdogsApplication.ourDogList.dogList, HttpStatus.OK);
 
     }
@@ -44,6 +44,7 @@ public class DogController
     {
         Dog rtnDog;
         logger.info("/dog " + id + " Accessed");
+        msgSender.sendMessage("ACCESSED DOG WITH THE ID#: " + id);
         if ((ProjectrestdogsApplication.ourDogList.findDog(e -> (e.getId()) == id)) == null)
         {
             throw new ResourceNotFoundException("Dog with id " + id + " not found");
@@ -61,6 +62,7 @@ public class DogController
         ArrayList<Dog> rtnDogs = ProjectrestdogsApplication.ourDogList.
                 findDogs(d -> d.getBreed().toUpperCase().equals(breed.toUpperCase()));
         logger.info("/dog " + breed + " Accessed");
+        msgSender.sendMessage("ACCESSED BREED TYPE: " + breed);
         return new ResponseEntity<>(rtnDogs, HttpStatus.OK);
     }
 }
