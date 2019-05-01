@@ -82,4 +82,10 @@ public class ErrorDetail
     {
         this.errors = errors;
     }
+
+    @Override
+    public String toString()
+    {
+        return "ErrorDetail{" + "title='" + title + '\'' + ", status=" + status + ", detail='" + detail + '\'' + ", timestamp='" + timestamp + '\'' + ", developerMessage='" + developerMessage + '\'' + ", errors=" + errors + '}';
+    }
 }

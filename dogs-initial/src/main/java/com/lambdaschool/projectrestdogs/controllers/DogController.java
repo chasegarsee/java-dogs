@@ -1,9 +1,11 @@
 package com.lambdaschool.projectrestdogs.controllers;
 
 import com.lambdaschool.projectrestdogs.ProjectrestdogsApplication;
+import com.lambdaschool.projectrestdogs.Services.MessageSender;
 import com.lambdaschool.projectrestdogs.exceptions.ResourceNotFoundException;
 import com.lambdaschool.projectrestdogs.models.Dog;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,12 +23,19 @@ public class DogController
 {
 
     private static final Logger logger = LoggerFactory.getLogger(Dog.class);
-    // localhost:8080/dogs/alldogs
+
+
+    @Autowired
+    MessageSender msgSender;
+
+    // localhost:8080/dogs/dogs
     @GetMapping(value = "/dogs")
     public ResponseEntity<?> getAllDogs()
     {
         logger.info("/All Dogs Accessed");
+        msgSender.sendMessage("MESSAGE SERVICE MU FUKEN WORKING");
         return new ResponseEntity<>(ProjectrestdogsApplication.ourDogList.dogList, HttpStatus.OK);
+
     }
 
     // localhost:8080/dogs/{id}
