@@ -1,0 +1,19 @@
+
+<html xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Dog Details</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>Breed</th>
+        <th>Weight</th>
+    </tr>
+    <tr th:each="dogs : ${dogList}">
+        <td th:text="${dogs.breed}"/>
+        <td th:text="${dogs.weight}"/>
+    </tr>
+</table>
+</body>
+</html>
